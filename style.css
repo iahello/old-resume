@@ -2,6 +2,7 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	overflow-x: hidden;
 }
 ::selection {
   background: #ffb7b7; 
@@ -26,7 +27,7 @@
 	background-color: white;
 	float: right;
 	width: 50%;
-	height: 100vh;
+	height: 100%;
 	padding: 50px;
 	color: white;
 	font-family: 'Montserrat';
@@ -68,14 +69,33 @@ h2 {
     transition: 1s ease;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 600px) {
+	.container {
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		flex-direction: column;
+	}
+	h2 {
+		font-size: 1em;
+	}
 	#left {
 		position: relative;
 		width: 100%;
-		height: 100vh;
+		height: 100%;
 		float: none;
 	}
+	#left>img {
+	text-align: center;
+	width: 70%;
+	}
 	#right {
-		
+		float: none;
+		width: 100%;
+	}
+	.personal, .education, .experience, .contact {
+		width: 100%;
 	}
 }
